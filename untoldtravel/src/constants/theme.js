@@ -15,7 +15,7 @@ export const shadow = {
   light: {
     shadowColor: colors.black,
     shadowRadius: 4,
-    shadowOpacity: 0.1,
+    shadowOpacity: 1,
     shadowOffset: {
       width: 0,
       height: 2,

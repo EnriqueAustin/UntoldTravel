@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Local File Imports
 import TabNavigator from './TabNavigator';
+import TripDetailsScreen from '../screens/TripDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,9 +18,20 @@ const MainNavigator = () => {
         <NavigationContainer>
             <StatusBar />
             <Stack.Navigator>
-                <Stack.Screen name="Root" component={TabNavigator} options={{
-                    headerShown: false,
-                }} />
+                <Stack.Screen 
+                    name="Root" 
+                    component={TabNavigator} 
+                    options={{
+                        headerShown: false,
+                    }}     
+                />
+                <Stack.Screen 
+                    name="TripDetails" 
+                    component={TripDetailsScreen} 
+                    options={{
+                        headerShown: false,
+                    }}     
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -1,18 +1,23 @@
+
 import React from 'react';
 import {Image, View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import {colors, shadow, sizes, spacing} from '../constants/theme';
 import FavoriteButton from './FavoritesButton';
+import { useNavigation } from '@react-navigation/native';
 
 const CARD_WIDTH = sizes.width / 2 - (spacing.l + spacing.l / 2);
 const CARD_HEIGHT = 220;
 
 const TripsList = ({list}) => {
+  const naviagtion = useNavigation();
   return (
     <View style={styles.container}>
       {list.map((item, index) => {
         return (
-          <TouchableOpacity style={styles.cardContainer}>
-            <View style={[styles.card, shadow.light]} key={item.id}>
+          <TouchableOpacity style={styles.cardContainer}  key={item.id} onPress={() => {
+            naviagtion.navigate('TripDetails', {trip: item});
+          }}>
+            <View style={[styles.card, shadow.light]}>
               <View style={styles.imageBox}>
                 <Image style={styles.image} source={item.image} />
               </View>
