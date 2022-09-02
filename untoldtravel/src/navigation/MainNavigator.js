@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, StatusBar } from 'react-native';
 
 // Navigation Imports
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,6 +15,7 @@ const Stack = createNativeStackNavigator();
 const MainNavigator = () => {
     return (
         <NavigationContainer>
+            <StatusBar />
             <Stack.Navigator>
                 <Stack.Screen name="Root" component={TabNavigator} options={{
                     headerShown: false,

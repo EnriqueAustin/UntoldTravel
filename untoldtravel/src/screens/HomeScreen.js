@@ -1,12 +1,32 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+
+import { colors } from '../constants/theme';
+import {PLACES, TOP_PLACES} from '../data/index';
+
+import MainHeader from '../components/MainHeader';
+import ScreenHeader from '../components/ScreenHeader';
+import SectionHeader from '../components/SectionHeader';
+import TopPlacesCarousel from '../components/TopPlacesCarousel';
+import TripsList from '../components/TripsList';
+
 
 // create a component
-const HomeScreen = ({navigation}) => {
+const HomeScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>HomeScreen</Text>
+            <MainHeader title='Untold Travel' />
+            <ScreenHeader mainTitle= 'Find Your' secondTitle='Dream Trip' />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <TopPlacesCarousel list={TOP_PLACES} />
+                <SectionHeader
+                    title="Popular Trips"
+                    buttonTitle="See All"
+                    onPress={() => {}}
+                />
+                <TripsList list={PLACES} />
+            </ScrollView>
         </View>
     );
 };
@@ -15,8 +35,7 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: colors.light ,
     },
 });
 
