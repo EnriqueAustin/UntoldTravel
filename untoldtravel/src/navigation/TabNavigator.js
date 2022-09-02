@@ -1,64 +1,99 @@
 //import liraries
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
-
+import { Animated, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Import Local files
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
-import icons from '../constants/icons';
 import Icon from '../components/Icon';
+import {colors, sizes} from '../constants/theme';
+
+const tabs = [
+    {
+        name: 'Home',
+        screen: HomeScreen,
+    },
+    {
+        name: 'Search',
+        screen: SearchScreen,
+    },
+    {
+        name: 'Favorite',
+        screen: FavoriteScreen,
+    },
+];
 
 const Tab = createBottomTabNavigator();
 
-// create a component
 const TabNavigator = () => {
-    return (
-        <Tab.Navigator 
-            initialRouteName='Home' 
-            screenOptions={{
-                headerShown: false, tabBarShowLabel: false
-                }}
-        >
-            <Tab.Screen 
-                name='Home' 
-                component={HomeScreen} 
-                options={{
-                    tabBarIcon: () => {
-                        return (
-                            <Icon icon={'Home'}/>
-                        );
-                    },   
-                }}
-            />
-            <Tab.Screen 
-                name='Search' 
-                component={SearchScreen} 
-                options={{
-                    tabBarIcon: () => {
-                        return (
-                            <Icon icon={'Search'}/>
-                        );
-                    },
-                }}
-            />
-            <Tab.Screen 
-                name='Favorite' 
-                component={FavoriteScreen} 
-                options={{
-                    tabBarIcon: () => {
-                        return (
-                            <Icon icon={'Favorite'}/>
-                        );
-                    },
-                }}
-            />
 
-        </Tab.Navigator>
+    const offsetAnimation = React.useRef(new Animated.Value(0)).current;
+
+    return (
+        <>
+            <Tab.Navigator 
+                initialRouteName='Home' 
+                screenOptions={{
+                    headerShown: false,
+                    tabBarShowLabel: false,
+                }}>
+                {tabs.map(({name, screen}, index) => {
+                    return (
+                        <Tab.Screen
+                            key={name}
+                            name={name}
+                            component={screen} 
+                            options={{
+                                tabBarIcon: ({focused}) => {
+                                    return (
+                                        <Icon
+                                            icon={name}
+                                            size={40}
+                                            style={{
+                                                tintColor: focused ? colors.primary : colors.gray,
+                                            }}
+                                        />
+                                    );
+                                },   
+                            }}
+                            listeners={{
+                                focus: () => {
+                                    Animated.spring(offsetAnimation, {
+                                        toValue: index * (sizes.width / tabs.length),
+                                        useNativeDriver: true,
+                                    }). start();
+                                }
+                            }}
+                        /> 
+                    );
+                })}
+            </Tab.Navigator>
+
+            <Animated.View style={[styles.indicator, {
+                transform: [
+                    {
+                        translateX: offsetAnimation,
+                    }
+                ]
+            }]} />
+        </>
     );
 };
+
+// define your styles
+const styles = StyleSheet.create({
+    indicator: {
+        position: 'absolute',
+        width: 10,
+        height: 2,
+        left: sizes.width / tabs.length / 2 - 5,
+        bottom: 8,
+        backgroundColor: colors.primary,
+        zIndex: 100,
+    },
+});
 
 //make this component available to the app
 export default TabNavigator;
