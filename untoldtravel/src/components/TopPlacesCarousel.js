@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react
 import {colors, shadow, sizes, spacing} from '../constants/theme';
 import FavoriteButton from './FavoritesButton';
 import { useNavigation } from '@react-navigation/native';
+import { SharedElement } from 'react-navigation-shared-element';
 
 const CARD_WIDTH = sizes.width - 80;
 const CARD_HEIGHT = 200;
@@ -33,9 +34,14 @@ const TopPlacesCarousel = ({list}) => {
                     >
                         <View style={[styles.card, shadow.dark]}>
                             <FavoriteButton style={styles.favorite} />
-                            <View style={styles.imageBox}>
-                                <Image source={item.image} style={styles.image}/>
-                            </View>
+                            <SharedElement 
+                              id={`trip.${item.id}.image`} 
+                              style={StyleSheet.absoluteFill}
+                            >
+                              <View style={styles.imageBox}>
+                                  <Image source={item.image} style={styles.image}/>
+                              </View>
+                            </SharedElement>
                             <View style={styles.titleBox}>
                                 <Text style={styles.title}>{item.title}</Text>
                                 <Text style={styles.location}>{item.location}</Text>

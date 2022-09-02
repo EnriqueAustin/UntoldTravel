@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // Local File Imports
 import TabNavigator from './TabNavigator';
 import TripDetailsScreen from '../screens/TripDetailsScreen';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 const Stack = createNativeStackNavigator();
 
