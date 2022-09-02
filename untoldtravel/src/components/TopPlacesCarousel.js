@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react-native';
 import {colors, shadow, sizes, spacing} from '../constants/theme';
 import FavoriteButton from './FavoritesButton';
+import { useNavigation } from '@react-navigation/native';
 
 const CARD_WIDTH = sizes.width - 80;
 const CARD_HEIGHT = 200;
@@ -10,6 +11,7 @@ const CARD_WIDTH_SPACING = CARD_WIDTH + spacing.l;
 
 // create a component
 const TopPlacesCarousel = ({list}) => {
+    const navigation = useNavigation();
     return (
         <FlatList 
             data={list}
@@ -21,6 +23,9 @@ const TopPlacesCarousel = ({list}) => {
             renderItem={({item, index}) => {
                 return (
                     <TouchableOpacity 
+                        onPress={() => {
+                          navigation.navigate('TripDetails', {trip: item});
+                        }}
                         style={{
                             marginLeft: spacing.l,
                             marginRight: index === list.length - 1 ? spacing.l : 0,
