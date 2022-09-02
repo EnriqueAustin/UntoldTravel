@@ -12,7 +12,7 @@ const TripDetailsScreen = ({navigation, route}) => {
                 <Image source={trip.image} style={[StyleSheet.absoluteFill]}/>
             </View>
         </View>
-    );
+    );//
 };
 
 // define your styles
