@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -9,6 +9,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import icons from '../constants/icons';
+import Icon from '../components/Icon';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,9 +28,9 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: () => {
                         return (
-                            <Image source={icons.Home} resizeMode='cover' />
+                            <Icon icon={'Home'}/>
                         );
-                    },
+                    },   
                 }}
             />
             <Tab.Screen 
@@ -38,7 +39,7 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: () => {
                         return (
-                            <Image source={icons.Search} resizeMode='cover' />
+                            <Icon icon={'Search'}/>
                         );
                     },
                 }}
@@ -49,7 +50,7 @@ const TabNavigator = () => {
                 options={{
                     tabBarIcon: () => {
                         return (
-                            <Image source={icons.Favorite} resizeMode='cover' />
+                            <Icon icon={'Favorite'}/>
                         );
                     },
                 }}
