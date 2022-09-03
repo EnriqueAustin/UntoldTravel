@@ -37,15 +37,23 @@ const TripDetailsCarousel = ({slides, id}) => {
                 );
                 }}
             />
-            <View style={styles.indicators}>
-                <CarouselIndicators 
-                    slidesCount={slides.length}
-                    slideWidth={sizes.width}
-                    dotSize={12}
-                    dotSpacing={8}
-                    scrollAnimated={scrollAnimated}
-                />
-            </View>
+            {slides.length > 1 && (
+                <Animatable.View
+                    style={styles.indicators}
+                    animation="fadeInUp"
+                    delay={550}
+                    duration={400}
+                    easing="ease-in-out"
+                >
+                    <CarouselIndicators
+                        slidesCount={slides.length}
+                        slideWidth={sizes.width}
+                        dotSize={12}
+                        dotSpacing={8}
+                        scrollAnimated={scrollAnimated}
+                    />
+                </Animatable.View>
+            )}
         </>
     );
 };
