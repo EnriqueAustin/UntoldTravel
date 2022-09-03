@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import {colors, sizes, spacing} from '../constants/theme';
 import Icon from '../components/Icon';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import TripDetailsCard from '../components/TripDetailsCard';
+import TripDetailsCard from '../components/TripDetailsCard/TripDetailsCard';
 import * as Animatable from 'react-native-animatable';
 import TripDetailsCarousel from '../components/TripDetailsCarousel';
 
@@ -28,13 +28,6 @@ const TripDetailsScreen = ({navigation, route}) => {
                 />
             </Animatable.View>
             <TripDetailsCarousel slides={slides} id={trip.id} />
-
-        
-            {/* <SharedElement id={`trip.${trip.id}.image`} style={[StyleSheet.absoluteFill]} >
-                <View style={[StyleSheet.absoluteFill, styles.imageBox]}>
-                    <Image source={trip.image} style={[StyleSheet.absoluteFill, styles.image]}/>
-                </View>
-            </SharedElement> */}
             <TripDetailsCard trip={trip} />
         </View>
     );

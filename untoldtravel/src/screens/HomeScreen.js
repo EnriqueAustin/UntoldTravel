@@ -17,11 +17,11 @@ const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <MainHeader title='Untold Travel' />
-            <ScreenHeader mainTitle= 'Find Your' secondTitle='Dream Trip' />
+            <ScreenHeader mainTitle= 'Find Your' secondTitle='Destination' />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <TopPlacesCarousel list={TOP_PLACES} />
                 <SectionHeader
-                    title="Popular Trips"
+                    title="Popular Destinations"
                     buttonTitle="See All"
                     onPress={() => {}}
                 />

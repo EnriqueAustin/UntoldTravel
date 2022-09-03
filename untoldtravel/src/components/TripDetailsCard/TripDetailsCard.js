@@ -1,8 +1,9 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import {colors, sizes, spacing} from '../constants/theme';
+import {colors, sizes, spacing} from '../../constants/theme';
 import * as Animatable from 'react-native-animatable';
+import BottomSheet from '@gorhom/bottom-sheet';
 
 
 // create a component
