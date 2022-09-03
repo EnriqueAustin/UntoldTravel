@@ -25,6 +25,7 @@ const MainNavigator = () => {
                     options={{
                         headerShown: false,
                         usenativeDriver: true,
+                        gestureEnabled: false,
                     }}     
                 />
                 <Stack.Screen 
@@ -33,6 +34,7 @@ const MainNavigator = () => {
                     options={{
                         headerShown: false,
                         usenativeDriver: true,
+                        gestureEnabled: false,
                         cardStyleInterpolator: ({current: {progress}}) => ({
                             cardStyle: {
                                 opacity: progress,

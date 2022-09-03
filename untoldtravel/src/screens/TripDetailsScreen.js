@@ -4,14 +4,15 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import {colors, sizes, spacing} from '../constants/theme';
 import Icon from '../components/Icon';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import { SharedElement } from 'react-navigation-shared-element';
 import TripDetailsCard from '../components/TripDetailsCard';
 import * as Animatable from 'react-native-animatable';
+import TripDetailsCarousel from '../components/TripDetailsCarousel';
 
 // create a component
 const TripDetailsScreen = ({navigation, route}) => {
     const insets = useSafeAreaInsets();
     const {trip} = route.params;
+    const slides = [trip.image, ...trip.gallery];
     return (
         <View style={styles.container}>
             <Animatable.View
@@ -26,11 +27,14 @@ const TripDetailsScreen = ({navigation, route}) => {
                     onPress={navigation.goBack}
                 />
             </Animatable.View>
-            <SharedElement id={`trip.${trip.id}.image`} style={[StyleSheet.absoluteFill]} >
+            <TripDetailsCarousel slides={slides} id={trip.id} />
+
+        
+            {/* <SharedElement id={`trip.${trip.id}.image`} style={[StyleSheet.absoluteFill]} >
                 <View style={[StyleSheet.absoluteFill, styles.imageBox]}>
                     <Image source={trip.image} style={[StyleSheet.absoluteFill, styles.image]}/>
                 </View>
-            </SharedElement>
+            </SharedElement> */}
             <TripDetailsCard trip={trip} />
         </View>
     );

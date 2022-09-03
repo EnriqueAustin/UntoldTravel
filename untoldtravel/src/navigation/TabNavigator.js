@@ -4,16 +4,17 @@ import { Animated, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Import Local files
-import HomeScreen from '../screens/HomeScreen';
+
 import SearchScreen from '../screens/SearchScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import Icon from '../components/Icon';
 import {colors, sizes} from '../constants/theme';
+import HomeNavigator from './HomeNavigator';
 
 const tabs = [
     {
         name: 'Home',
-        screen: HomeScreen,
+        screen: HomeNavigator,
     },
     {
         name: 'Search',
