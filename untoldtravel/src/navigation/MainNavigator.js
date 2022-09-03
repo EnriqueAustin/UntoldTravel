@@ -11,7 +11,7 @@ import TabNavigator from './TabNavigator';
 import TripDetailsScreen from '../screens/TripDetailsScreen';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
-const Stack = createNativeStackNavigator();
+const Stack = createSharedElementStackNavigator();
 
 // create a component
 const MainNavigator = () => {
@@ -24,6 +24,7 @@ const MainNavigator = () => {
                     component={TabNavigator} 
                     options={{
                         headerShown: false,
+                        usenativeDriver: true,
                     }}     
                 />
                 <Stack.Screen 
@@ -31,6 +32,12 @@ const MainNavigator = () => {
                     component={TripDetailsScreen} 
                     options={{
                         headerShown: false,
+                        usenativeDriver: true,
+                        cardStyleInterpolator: ({current: {progress}}) => ({
+                            cardStyle: {
+                                opacity: progress,
+                            }
+                        })
                     }}     
                 />
             </Stack.Navigator>
