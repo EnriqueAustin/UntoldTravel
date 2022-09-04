@@ -1,69 +1,60 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Dimensions, Platform } from "react-native";
+import React from "react";
+import { StyleSheet, View, Dimensions } from "react-native";
 import MapView from "react-native-maps";
-import Carousel from 'react-native-snap-carousel';
-import * as Location from 'expo-location';
-import ServiceList from './serviceList';
+//import Carousel from 'react-native-snap-carousel';
+//import * as Location from 'expo-location';
+//import ServiceList from './serviceList';
 import Loader from './Loader';
-import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
-const center = { lat: -32.8999964, lng: 17.9833294 };
 
-const LocationOfDevice = () => {
-    const companies = ServiceList;
-    let refCorousel = null;
-    const [currentLocation, setCurrentLocation] = useState(null);
-    useEffect(() => {
-        (async () => {
-            let { status } = await Location.requestForegroundPermissionsAsync();
-            if (status !== 'granted') {
-                setErrorMsg('Permission to access location was denied');
-                return;
-            }
 
-            let location = await Location.getCurrentPositionAsync({});
-            setLocation(location);
-            console.log(currentLocation);
-        })();
-    }, [])
-};
 
 export default class Maps extends React.Component {
     render() {
         return (
             <View>
-                {companies != null
-                    ? <View>
-                        <MapView style={styles.map}
-                            initialRegion={{
-                                latitude: -32.899996,
-                                longitude: 17.983329,
-                                latitudeDelta: 0.005,
-                                longitudeDelta: 0.005,
+                <View>
+                    <View style={{ position: 'absolute', top: 10, width: '100%' }}>
+                        <TextInput
+                            style={{
+                                borderRadius: 10,
+                                margin: 10,
+                                color: '#000',
+                                borderColor: '#666',
+                                backgroundColor: '#FFF',
+                                borderWidth: 1,
+                                height: 45,
+                                paddingHorizontal: 10,
+                                fontSize: 18,
                             }}
-                        >
-                            <MapView.Marker
-                                coordinate={{
-                                    latitude: -32.89999,
-                                    longitude: 17.9833,
-                                }}
-                            >
-                                <View style={styles.radius}>
-                                    <View style={styles.marker} />
-                                </View>
-                            </MapView.Marker>
-                        </MapView>
-                        <Carousel
-                            ref={(c) => { refCorousel = c; }}
-                            data={companies.entries}
-                            renderItem={renderCard}
-                        //sliderWidth={sliderWidth}
-                        //itemWidth={itemWidth}
+                            placeholder={'Search'}
+                            placeholderTextColor={'#666'}
                         />
                     </View>
+                    <MapView style={styles.map}
+                        initialRegion={{
+                            latitude: -32.899996,
+                            longitude: 17.983329,
+                            latitudeDelta: 0.005,
+                            longitudeDelta: 0.005,
+                        }}
+                    >
+                        <MapView.Marker
+                            coordinate={{
+                                latitude: -32.89999,
+                                longitude: 17.9833,
+                            }}
+                        >
+                            <View style={styles.radius}>
+                                <View style={styles.marker} />
+                            </View>
+                        </MapView.Marker>
+                    </MapView>
 
-                    : <Loader />
-                }
+                </View>
+
+                : <Loader />
+
             </View>
         );
     }
