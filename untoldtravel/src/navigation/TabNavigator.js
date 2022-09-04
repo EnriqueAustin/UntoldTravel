@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 // Import Local files
 import HomeScreen from '../screens/HomeScreen';
@@ -9,6 +10,7 @@ import SearchScreen from '../screens/SearchScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import Icon from '../components/Icon';
 import {colors, sizes} from '../constants/theme';
+import Map from '../components/search/Map';
 
 const tabs = [
     {
@@ -17,7 +19,7 @@ const tabs = [
     },
     {
         name: 'Search',
-        screen: SearchScreen,
+        screen: Map,
     },
     {
         name: 'Favorite',

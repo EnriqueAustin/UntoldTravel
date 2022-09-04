@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import TripDetailsCarousel from '../components/TripDetailsCarousel';
 import {colors, sizes, spacing} from '../constants/theme';
 
 // create a component
@@ -11,6 +12,7 @@ const TripDetailsScreen = ({navigation, route}) => {
             <View>
                 <Image source={trip.image} style={[StyleSheet.absoluteFill]}/>
             </View>
+            <TripDetailsCarousel slides={slides}/>
         </View>
     );//
 };
