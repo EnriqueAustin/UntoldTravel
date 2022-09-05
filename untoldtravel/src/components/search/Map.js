@@ -1,10 +1,9 @@
 import React from "react";
-import { StyleSheet, View, Dimensions } from "react-native";
-import MapView from "react-native-maps";
+import { StyleSheet, View, Dimensions, TextInput } from "react-native";
+import MapView from 'react-native-maps';
 //import Carousel from 'react-native-snap-carousel';
 //import * as Location from 'expo-location';
 //import ServiceList from './serviceList';
-import Loader from './Loader';
 
 
 
@@ -13,25 +12,7 @@ export default class Maps extends React.Component {
     render() {
         return (
             <View>
-                <View>
-                    <View style={{ position: 'absolute', top: 10, width: '100%' }}>
-                        <TextInput
-                            style={{
-                                borderRadius: 10,
-                                margin: 10,
-                                color: '#000',
-                                borderColor: '#666',
-                                backgroundColor: '#FFF',
-                                borderWidth: 1,
-                                height: 45,
-                                paddingHorizontal: 10,
-                                fontSize: 18,
-                            }}
-                            placeholder={'Search'}
-                            placeholderTextColor={'#666'}
-                        />
-                    </View>
-                    <MapView style={styles.map}
+                <MapView style={styles.map}
                         initialRegion={{
                             latitude: -32.899996,
                             longitude: 17.983329,
@@ -50,10 +31,28 @@ export default class Maps extends React.Component {
                             </View>
                         </MapView.Marker>
                     </MapView>
+                <View style={{ position: 'absolute', top: 10, width: '100%' }}>
+                        <TextInput
+                            style={{
+                                borderRadius: 10,
+                                margin: 10,
+                                color: '#000',
+                                borderColor: '#666',
+                                backgroundColor: '#FFF',
+                                borderWidth: 1,
+                                height: 45,
+                                paddingHorizontal: 10,
+                                fontSize: 18,
+                            }}
+                            placeholder={'Search'}
+                            placeholderTextColor={'#666'}
+                        />
+                    </View>
+                <View>
+                
+                    
 
                 </View>
-
-                : <Loader />
 
             </View>
         );

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ViewPropTypes } from 'deprecated-react-native-prop-types';
+//import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 // Import Local files
 import HomeScreen from '../screens/HomeScreen';
