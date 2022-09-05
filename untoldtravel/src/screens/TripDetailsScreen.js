@@ -29,6 +29,7 @@ const TripDetailsScreen = ({navigation, route}) => {
             </Animatable.View>
             <TripDetailsCarousel slides={slides} id={trip.id} />
             <TripDetailsCard trip={trip} />
+            
         </View>
     );
 };

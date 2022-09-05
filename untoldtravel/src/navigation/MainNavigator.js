@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
 import TripDetailsScreen from '../screens/TripDetailsScreen';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import TravelingScreen from '../screens/TravelingScreen';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -40,6 +41,15 @@ const MainNavigator = () => {
                                 opacity: progress,
                             }
                         })
+                    }}     
+                />
+                <Stack.Screen 
+                    name="TravelingScreen" 
+                    component={TravelingScreen} 
+                    options={{
+                        headerShown: false,
+                        usenativeDriver: true,
+                        gestureEnabled: false,
                     }}     
                 />
             </Stack.Navigator>

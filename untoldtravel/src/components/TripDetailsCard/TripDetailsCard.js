@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component, useMemo } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {colors, sizes, spacing} from '../../constants/theme';
 import * as Animatable from 'react-native-animatable';
 import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
@@ -16,6 +16,10 @@ import Animated, {
 import Icon from '../Icon';
 import Divider from '../shared/Divider';
 import SectionHeader from '../shared/SectionHeader';
+import RatingOverall from '../shared/Rating/RatingOverall';
+import HotelsCarousel from './HotelsCarousel';
+import TravelingScreen from '../../screens/TravelingScreen';
+import { useNavigation } from '@react-navigation/native';
 
 const AnimatedDivider = Animated.createAnimatedComponent(Divider);
 
@@ -24,6 +28,7 @@ const AnimatedDivider = Animated.createAnimatedComponent(Divider);
 const TripDetailsCard = ({trip}) => {
   const animatedIndex = useSharedValue(0);
   const snapPoints = useMemo(() => ['30%', '80%']);
+  const navigation = useNavigation();
 
   const titleStyle = useAnimatedStyle(() => ({
     color: interpolateColor(animatedIndex.value, [0, 0.08], [colors.white, colors.primary]
@@ -113,6 +118,7 @@ const TripDetailsCard = ({trip}) => {
               showsHorizontalScrollIndicator={false}
             >
               <Animated.View style={contentStyle}>
+              <RatingOverall rating={trip.rating} containerStyle={styles.rating} />
                 <SectionHeader 
                   title='Summary'
                   containerStyle={styles.sectionHeader}
@@ -125,12 +131,24 @@ const TripDetailsCard = ({trip}) => {
                   title="Hotels"
                   containerStyle={styles.sectionHeader}
                   titleStyle={styles.sectionTitle}
-                  onPress={() => {}}
-                  buttonTitle="See All"
                 />
+                <HotelsCarousel hotels={trip.hotels} />
+                
                 
               </Animated.View>
             </BottomSheetScrollView>
+            <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => navigation.navigate("TravelingScreen")}
+                >
+                  <Text>Travel</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => navigation.navigate("TravelingScreen")}
+                >
+                  <Text>Business</Text>
+                </TouchableOpacity>
       </BottomSheet>
     );
   };
@@ -183,6 +201,11 @@ const styles = StyleSheet.create({
     },
     rating: {
       marginHorizontal: spacing.l,
+    },
+    button: {
+      alignItems: "center",
+      backgroundColor: "#DDDDDD",
+      padding: 10
     },
   });
 
