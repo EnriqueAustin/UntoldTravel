@@ -10,6 +10,7 @@ import FavoriteScreen from '../screens/FavoriteScreen';
 import Icon from '../components/Icon';
 import {colors, sizes} from '../constants/theme';
 import HomeNavigator from './HomeNavigator';
+import Map from '../components/search/Map';
 
 const tabs = [
     {
@@ -18,7 +19,7 @@ const tabs = [
     },
     {
         name: 'Search',
-        screen: SearchScreen,
+        screen: Map,
     },
     {
         name: 'Favorite',
