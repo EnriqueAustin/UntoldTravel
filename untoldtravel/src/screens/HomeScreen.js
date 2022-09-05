@@ -7,7 +7,7 @@ import {PLACES, TOP_PLACES} from '../data/index';
 
 import MainHeader from '../components/MainHeader';
 import ScreenHeader from '../components/ScreenHeader';
-import SectionHeader from '../components/SectionHeader';
+import SectionHeader from '../components/shared/SectionHeader';
 import TopPlacesCarousel from '../components/TopPlacesCarousel';
 import TripsList from '../components/TripsList';
 

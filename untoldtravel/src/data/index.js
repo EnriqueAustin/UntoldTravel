@@ -36,7 +36,7 @@ export const TOP_PLACES = [
   
   export const PLACES = [
     {
-      id: 4,
+      id: 1,
       image: require('../../assets/images/645d5f28e26c7de2a280f71db15c2141.jpeg'),
       title: 'Cape Town',
       location: 'South Africa',
@@ -49,7 +49,7 @@ export const TOP_PLACES = [
       ],
       },
     {
-      id: 5,
+      id: 2,
       image: require('../../assets/images/eea622430834cb64b900c2f03e5be6b8.jpeg'),
       title: 'Cape Town',
       location: 'South Africa',
@@ -58,7 +58,7 @@ export const TOP_PLACES = [
       gallery: [],
       },
     {
-      id: 6,
+      id: 3,
       image: require('../../assets/images/0e627c12c05e4dd93ab122d618ea7849.jpeg'),
       title: 'Cape Town',
       location: 'South Africa',
@@ -67,7 +67,7 @@ export const TOP_PLACES = [
       gallery: [],
       },
     {
-      id: 7,
+      id: 4,
       image: require('../../assets/images/c2dcbb54ca9316831b0f6ed4d4136dda.jpeg'),
       title: 'Cape Town',
       location: 'South Africa',
