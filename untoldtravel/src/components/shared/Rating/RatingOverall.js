@@ -3,18 +3,17 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {colors, sizes, spacing} from '../../../constants/theme';
 import Rating from './Rating';
+import { getFractionDigitsRating } from './utils';
 
 // create a component
 const RatingOverall = ({rating, containerStyle}) => {
     return (
         <View style={[styles.container, containerStyle]}>
-            <Text style={styles.rating}>{rating}</Text>
+            <Text style={styles.rating}>{getFractionDigitsRating(rating)}</Text>
             <View>
               <Text style={styles.caption}>Overall Rating</Text>
-              {/* 
-                will finish later running out of time prioritizing just showing the info now for the mvp
-
-              <Rating rating={rating} /> */}
+              
+              <Rating rating={rating} />
             </View>
         </View>
     );

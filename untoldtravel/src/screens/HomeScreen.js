@@ -16,7 +16,9 @@ import TripsList from '../components/TripsList';
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
-            <MainHeader title='Untold Travel' />
+            <View style={{paddingTop: 10}}>
+                <MainHeader title='Untold Travel' />
+            </View>
             <ScreenHeader mainTitle= 'Find Your' secondTitle='Destination' />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <TopPlacesCarousel list={TOP_PLACES} />

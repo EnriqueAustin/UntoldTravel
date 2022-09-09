@@ -16,7 +16,7 @@ const TripDetailsScreen = ({navigation, route}) => {
     return (
         <View style={styles.container}>
             <Animatable.View
-                style={[styles.backButton, {marginTop: insets.top}]}
+                style={[styles.backButton, {marginTop: 10}]}
                 animation="fadeIn"
                 delay={500}
                 duration={400}
