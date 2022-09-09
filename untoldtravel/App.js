@@ -6,7 +6,7 @@ import MainNavigator from './src/navigation/MainNavigator';
 
 export default function App() {
   return (
-      <GestureHandlerRootView style={{ flex: 1 }}>
+      <GestureHandlerRootView style={{ flex: 1, marginVertical: 10, }}>
         <MainNavigator />
       </GestureHandlerRootView>
   );

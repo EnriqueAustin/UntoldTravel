@@ -139,7 +139,7 @@ const TripDetailsCard = ({trip}) => {
             </BottomSheetScrollView>
             <TouchableOpacity
                   style={styles.button}
-                  onPress={() => navigation.navigate("TravelingScreen")}
+                  onPress={() => navigation.navigate("HomeScreen")}
                 >
                   <Text>Travel</Text>
                 </TouchableOpacity>
