@@ -7,6 +7,8 @@ import {colors, sizes, spacing} from '../../constants/theme';
 import CardMedia from '../shared/Card/CardMedia';
 import CardContent from '../shared/Card/CardContent';
 import Icon from '../Icon';
+import Rating from '../shared/Rating/Rating';
+import CardFavoriteIcon from '../shared/Card/CardFavoriteIcon';
 
 const CARD_HEIGHT = 200;
 
@@ -18,6 +20,7 @@ const HotelsCarousel = ({hotels}) => {
             renderItem={({item, style}) => {
                 return (
                     <Card style={[styles.card, style]}>
+                        <CardFavoriteIcon active={false} onPress={() => {}} />
                         <CardMedia source={item.image} />
                         <CardContent style={styles.content}>
                             <View style={styles.titleBox}>
@@ -25,7 +28,12 @@ const HotelsCarousel = ({hotels}) => {
                                 <View style={styles.locationBox}>
                                     <Text style={styles.location}>{item.location}</Text>
                                     <Icon icon="Location" size={18} style={styles.locationIcon} />
-                                </View>   
+                                </View> 
+                                <Rating
+                                  showLabelInLine
+                                  rating={item.rating} 
+                                  size={12} 
+                                  containerStyle={styles.rating} />
                             </View>
                             <View style={styles.priceBox}>
                                 <Text style={styles.price}>{item.pricePeerDay}</Text>

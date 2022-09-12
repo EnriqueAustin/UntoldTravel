@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {AirbnbRating} from 'react-native-ratings';
 import { colors } from '../../../constants/theme';
-import { getCorrectRating } from './utils';
+import { getCorrectRating, getFractionDigitsRating } from './utils';
 
 // create a component
-const Rating = ({containerStyle, rating, disabled = true, size = 12}) => {
+const Rating = ({showLabelInLine, containerStyle, rating, disabled = true, size = 12}) => {
     const _rating = getCorrectRating(rating);
     return (
-        <View style={[styles.container, containerStyle]}>
+        <View style={[styles.container, containerStyle].concat(showLabelInLine ? styles.containerRow : null,)}>
             <AirbnbRating 
                 defaultRating={_rating}
                 count={5} 
@@ -18,6 +18,7 @@ const Rating = ({containerStyle, rating, disabled = true, size = 12}) => {
                 isDisabled={disabled}
                 size={size}
             />
+            {showLabelInLine && <Text style={styles.label}>{getFractionDigitsRating(rating)}</Text>}
         </View>
     );
 };
@@ -26,8 +27,17 @@ const Rating = ({containerStyle, rating, disabled = true, size = 12}) => {
 const styles = StyleSheet.create({
     container: {
         alignSelf: 'flex-start',
-        marginHorizontal: -2,   
-    },
+        alignItems: 'flex-end',
+        marginHorizontal: -2,
+      },
+      containerRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+      },
+      label: {
+        color: colors.primary,
+        marginLeft: 4,
+      },
 });
 
 //make this component available to the app

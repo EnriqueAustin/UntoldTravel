@@ -1,26 +1,25 @@
-//import liraries
-import React, { Component } from 'react';
-import {View} from 'react-native';
-import {colors, shadow} from '../constants/theme';
+
+import React from 'react';
+import {TouchableOpacity, View} from 'react-native';
+import {colors, shadow, sizes} from '../constants/theme';
 import Icon from './Icon';
 
-// create a component
-const FavoriteButton = ({active, style}) => {
-    return (
+const FavoriteButton = ({active, style, onPress}) => {
+  return (
+    <TouchableOpacity style={style} onPress={onPress}>
       <View
         style={[
           {
             backgroundColor: colors.white,
             padding: 4,
-            borderRadius: 20,
+            borderRadius: sizes.radius,
           },
           shadow.light,
-          style,
         ]}>
         <Icon icon={active ? 'FavoriteFilled' : 'Favorite'} size={24} />
       </View>
-    );
-  };
+    </TouchableOpacity>
+  );
+};
 
-//make this component available to the app
 export default FavoriteButton;

@@ -133,22 +133,10 @@ const TripDetailsCard = ({trip}) => {
                   titleStyle={styles.sectionTitle}
                 />
                 <HotelsCarousel hotels={trip.hotels} />
-                
-                
+
               </Animated.View>
             </BottomSheetScrollView>
-            <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => navigation.navigate("HomeScreen")}
-                >
-                  <Text>Travel</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => navigation.navigate("TravelingScreen")}
-                >
-                  <Text>Business</Text>
-                </TouchableOpacity>
+            
       </BottomSheet>
     );
   };
