@@ -3,13 +3,27 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import {AirbnbRating} from 'react-native-ratings';
 import { colors } from '../../../constants/theme';
-import { getCorrectRating, getFractionDigitsRating } from './utils';
+import { getCorrectRating, getFractionDigitsRating, getRatingLabel } from './utils';
 
 // create a component
-const Rating = ({showLabelInLine, containerStyle, rating, disabled = true, size = 12}) => {
+const Rating = ({
+  showLabelInLine, 
+  showLableTop,
+  containerStyle, 
+  rating, 
+  disabled = true, 
+  size = 12
+}) => {
     const _rating = getCorrectRating(rating);
     return (
-        <View style={[styles.container, containerStyle].concat(showLabelInLine ? styles.containerRow : null,)}>
+        <View 
+          style={[
+            styles.container, containerStyle].concat(
+              showLabelInLine ? styles.containerRow : null,
+            )}>
+            {showLableTop && (
+              <Text style={styles.label}>{getFractionDigitsRating(rating)}</Text>
+            )}
             <AirbnbRating 
                 defaultRating={_rating}
                 count={5} 

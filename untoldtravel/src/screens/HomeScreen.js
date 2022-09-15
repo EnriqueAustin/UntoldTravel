@@ -21,7 +21,7 @@ const HomeScreen = () => {
             </View>
             <ScreenHeader mainTitle= 'Find Your' secondTitle='Destination' />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <TopPlacesCarousel list={TOP_PLACES} />
+                <TopPlacesCarousel list={TOP_PLACES} style={styles.shadow} />
                 <SectionHeader
                     title="Popular Destinations"
                     buttonTitle="See All"
@@ -38,6 +38,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.light ,
+    },
+    shadow: {
+        shadowColor: colors.black,
+    shadowRadius: 4,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
     },
 });
 

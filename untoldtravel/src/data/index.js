@@ -168,6 +168,57 @@ export const HOTELS = {
   },
 };
 
+export const DESTINATIONS = {
+  1: {
+    id: 1,
+    title: 'Cape Town Central',
+    location: 'South Africa',
+    image: require('../../assets/images/hotels/cb-2.jpeg'),
+    rating: 9.4,
+    description: 'Cape Town glistens at the southern toe of the African continent. Tourist brochure-views at Blaauwberg Beach and Kirstenbosch National Botanical Gardens are within easy driving distance of "The Mother City." The Cape of Good Hope Nature Reserve provides sweeping sea vistas, hiking trails and wildlife encounters. On a more somber note, travellers can visit Robben Island, the prison where Nelson Mandela was held for 27 years.',
+  },
+  2: {
+    id: 2,
+    title: 'Camps Bay',
+    location: 'South Africa',
+    image: require('../../assets/images/hotels/cb-2.jpeg'),
+    rating: 9.4,
+    description: 'Shaded spots go early at Cape Towns crowded Camps Bay, where locals picnic and play in the strong Atlantic waves. Look for the flagged bathing areas for safer swims for all the family. Festive cafes sit adjacent to the sands, which are dramatically set at the foot of the Twelve Apostles Mountains.',
+  },
+  3: {
+    id: 3,
+    title: 'Milnerton',
+    location: 'South Africa',
+    image: require('../../assets/images/hotels/cb-2.jpeg'),
+    rating: 9.4,
+    description: '',
+  },
+  4: {
+    id: 4,
+    title: 'Bantry Bay',
+    location: 'South Africa',
+    image: require('../../assets/images/hotels/cb-2.jpeg'),
+    rating: 9.4,
+    description: '',
+  },
+  5: {
+    id: 5,
+    title: 'Gordons Bay',
+    location: 'South Africa',
+    image: require('../../assets/images/hotels/cb-2.jpeg'),
+    rating: 9.4,
+    description: '',
+  },
+  6: {
+    id: 6,
+    title: 'Bloubergstrand',
+    location: 'South Africa',
+    image: require('../../assets/images/hotels/cb-2.jpeg'),
+    rating: 9.4,
+    description: '',
+  },
+}; 
+
 export const TOP_PLACES = [
   {
     id: 1,
@@ -175,13 +226,15 @@ export const TOP_PLACES = [
     title: 'Cape Town',
     location: 'South Africa',
     description:
-      'The ultimate Amalfi Coast travel guide, where to stay, where to eat, and what areas to visit in the Amalfi Coast of Italy. Positano, Ravello, Amalfi and more',
+      "From flat-topped Table Mountain down to the blue waters of Table Bay, Cape Town is simply stunning, but the city doesn't thrive by its looks alone. Proudly multicultural, its flourishing arts, dining, and nightlife scenes are proof of this modern metropolis' creativity and innovative spirit.",
       gallery: [
         require('../../assets/images/259904617_261906535960531_4924434510662570753_n.jpg'),
         require('../../assets/images/eea622430834cb64b900c2f03e5be6b8.jpeg'),
       ],
       rating: 9.0,
+      reviews: [REVIEWS[2], REVIEWS[1]],
       hotels: [HOTELS[13], HOTELS[14]],
+      destination: [DESTINATIONS[1], DESTINATIONS[2], DESTINATIONS[3], DESTINATIONS[4], DESTINATIONS[5], DESTINATIONS[6]],
   },
   {
     id: 2,
@@ -195,6 +248,7 @@ export const TOP_PLACES = [
       require('../../assets/images/280094007_1382277295568550_6415700435817507697_n.jpg'),
     ],
     rating: 9.0,
+    
   },
   {
     id: 3,

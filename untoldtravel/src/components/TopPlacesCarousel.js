@@ -32,7 +32,7 @@ const TopPlacesCarousel = ({list}) => {
                             marginRight: index === list.length - 1 ? spacing.l : 0,
                         }}
                     >
-                        <View style={[styles.card, shadow.dark]}>
+                        <View style={[styles.card]}>
                             <FavoriteButton style={styles.favorite} />
                             <SharedElement 
                               id={`trip.${item.id}.image`} 
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         height: CARD_HEIGHT,
         marginVertical: 10,
         backgroundColor: colors.white,
-        borderRaduis: sizes.radius,
+        
       },
       favorite: {
         position: 'absolute',

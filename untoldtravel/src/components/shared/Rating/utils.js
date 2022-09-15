@@ -3,3 +3,7 @@ export const getCorrectRating = rating =>
 
 export const getFractionDigitsRating = rating => rating.toFixed(1);
 
+export const getRatingLabel = rating => {
+    const reviews = ['Bad', 'Okay', 'Good', 'Very Good', 'Amazing'];
+    return reviews[rating - 1];
+  };

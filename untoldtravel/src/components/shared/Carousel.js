@@ -9,6 +9,7 @@ const CARD_WIDTH_SPACING = CARD_WIDTH + spacing.l;
 
 // create a component
 const Carousel = ({renderItem, items = []}) => {
+    
     return (
         <BottomSheetFlatList 
             data={items}

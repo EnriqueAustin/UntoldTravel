@@ -20,6 +20,8 @@ import RatingOverall from '../shared/Rating/RatingOverall';
 import HotelsCarousel from './HotelsCarousel';
 import TravelingScreen from '../../screens/TravelingScreen';
 import { useNavigation } from '@react-navigation/native';
+import Reviews from '../Reviews/Reviews';
+import DestinationCarousel from './DestinationsCarousel';
 
 const AnimatedDivider = Animated.createAnimatedComponent(Divider);
 
@@ -123,20 +125,38 @@ const TripDetailsCard = ({trip}) => {
                   title='Summary'
                   containerStyle={styles.sectionHeader}
                   titleStyle={styles.sectionTitle}
+                  onPress={() => {}}
+                  buttonTitle='See All'
                 />
                 <View style={styles.summary}>
                   <Text style={styles.summaryText}>{trip.description}</Text>
                 </View>
+                {/* <SectionHeader
+                  title="Destinations"
+                  containerStyle={styles.sectionHeader}
+                  titleStyle={styles.sectionTitle}
+                  onPress={() => {}}
+                  buttonTitle='See All'
+                />
+                <DestinationCarousel destination={trip.destination} /> */}
                 <SectionHeader
                   title="Hotels"
                   containerStyle={styles.sectionHeader}
                   titleStyle={styles.sectionTitle}
+                  onPress={() => {}}
+                  buttonTitle='See All'
                 />
                 <HotelsCarousel hotels={trip.hotels} />
-
+                <SectionHeader
+                  title="Reviews"
+                  containerStyle={styles.sectionHeader}
+                  titleStyle={styles.sectionTitle}
+                  onPress={() => {}}
+                  buttonTitle='See All'
+                />
+                <Reviews reviews={trip.reviews} />
               </Animated.View>
             </BottomSheetScrollView>
-            
       </BottomSheet>
     );
   };
