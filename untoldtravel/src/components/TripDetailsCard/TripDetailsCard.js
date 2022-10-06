@@ -131,14 +131,14 @@ const TripDetailsCard = ({trip}) => {
                 <View style={styles.summary}>
                   <Text style={styles.summaryText}>{trip.description}</Text>
                 </View>
-                {/* <SectionHeader
+                <SectionHeader
                   title="Destinations"
                   containerStyle={styles.sectionHeader}
                   titleStyle={styles.sectionTitle}
                   onPress={() => {}}
                   buttonTitle='See All'
                 />
-                <DestinationCarousel destination={trip.destination} /> */}
+                <DestinationCarousel destination={trip.destination} />
                 <SectionHeader
                   title="Hotels"
                   containerStyle={styles.sectionHeader}
