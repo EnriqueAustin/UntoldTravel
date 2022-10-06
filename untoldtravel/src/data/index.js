@@ -233,7 +233,7 @@ export const TOP_PLACES = [
       ],
       rating: 9.0,
       reviews: [REVIEWS[2], REVIEWS[1]],
-      hotels: [HOTELS[13], HOTELS[14]],
+      hotels: [HOTELS[13], HOTELS[14], HOTELS[3], HOTELS[8]],
       destination: [DESTINATIONS[1], DESTINATIONS[2], DESTINATIONS[3], DESTINATIONS[4], DESTINATIONS[5], DESTINATIONS[6]],
   },
   {

@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 import {sizes, spacing} from '../../constants/theme';
 import { BottomSheetFlatList } from "@gorhom/bottom-sheet"; 
 
@@ -11,7 +12,7 @@ const CARD_WIDTH_SPACING = CARD_WIDTH + spacing.l;
 const Carousel = ({renderItem, items = []}) => {
     
     return (
-        <BottomSheetFlatList 
+        <FlatList 
             data={items}
             horizontal
             style={styles.container}
