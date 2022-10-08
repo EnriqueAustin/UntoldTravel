@@ -266,7 +266,7 @@ export const PLACES = [
   {
     id: 4,
     image: require('../../assets/images/645d5f28e26c7de2a280f71db15c2141.jpeg'),
-    title: 'Cape Town',
+    title: 'Paternoster',
     location: 'South Africa',
     description:
       "Cappadocia's landscape includes dramatic expanses of soft volcanic rock, shaped by erosion into towers, cones, valleys, and caves. Rock-cut churches and underground tunnel complexes from the Byzantine and Islamic eras are scattered throughout the countryside.",
@@ -309,3 +309,22 @@ export const PLACES = [
     },
 ];
 
+export const RESTAURANTS = [
+  {
+    1: {
+      id: 1,
+      title: '',
+    },
+
+  },
+];
+
+export const THINGSTODO = [
+  {
+    1: {
+      id: 1,
+      title: '',
+    },
+
+  },
+];
