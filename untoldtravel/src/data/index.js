@@ -259,6 +259,7 @@ export const TOP_PLACES = [
       "Cherry blossoms usually bloom between mid-March and early May. In 2022, Tokyo's cherry blossom season officially began on March 20",
     gallery: [],
     rating: 9.0,
+    thingsToDo: [THINGSTODO[1],THINGSTODO[2],THINGSTODO[3]]
     },
 ];
 
@@ -323,8 +324,44 @@ export const THINGSTODO = [
   {
     1: {
       id: 1,
-      title: '',
+      title: 'West Coast Fossil Park',
+      description: 'West Coast Fossil Park West Coast Fossil Park West Coast Fossil Park West Coast Fossil Park',
+      rating: 9.5,
+      image: require(''),
+      location: 'Vredenburg',
+      address: 'R 45 - Langebaanweg, Vredenburg, Saldanha Bay Municipality 7395 South Africa',
+      price: '100',
+      website: 'https://fossilpark.org.za/',
+      contactNumber: '+27 22 766 1606',
+      category: 'Speciality Museums',
     },
 
+    2: {
+      id: 2,
+      title: 'Forest Fiends Urban Farm',
+      description: 'We are a small family passionate about the environment and healthy food . Come and see our beautiful ecological garden and learn how a micro ecosystem in any scale is sustainable and will supply you with more nutrient dense food. Whats on the Farm? Coffee shop with a lovely playing area for kids, Aquaponics facility, Aquaponics and Hydroponics items for sale, Arts and crafts, Farm animals.',
+      rating: 9,
+      image: require(''),
+      location: 'Vredenburg',
+      address: '2C Aquarius Street Witteklip, Vredenburg, Saldanha Bay Municipality 7380 South Africa',
+      price: '',
+      website: 'https://forestfriend.co.za/',
+      contactNumber: '+27 72 215 2765',
+      category: 'Farms',
+    },
+
+    3: {
+      id: 3,
+      title: 'Weskus Mall',
+      description: '',
+      rating: 8,
+      image: require(''),
+      location: 'Vredenburg',
+      address: '110 Saldanha Road, Vredenburg, Saldanha Bay Municipality 7380 South Africa',
+      price: '',
+      website: 'http://www.weskus-mall.co.za/',
+      contactNumber: '+27 22 706 6900',
+      category: 'Shopping Malls',
+    },
   },
 ];
