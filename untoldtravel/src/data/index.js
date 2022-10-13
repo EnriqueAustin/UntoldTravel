@@ -1,12 +1,12 @@
 const USERS = {
   1: {
     id: 1,
-    username: 'Jana Jane',
+    username: 'Alexia Jane',
     avatar: require('../../assets/images/users/32.jpeg'),
   },
   2: {
     id: 2,
-    username: 'Jonny Depp',
+    username: 'Jacky Depp',
     avatar: require('../../assets/images/users/35.jpeg'),
   },
 };
@@ -28,30 +28,6 @@ const REVIEWS = {
   },
 };
 
-export const BUSINESS = [
-  {
-    id: 1,
-    title: 'WFH Plumbing',
-    //image require(''),
-    location: 'Vredenburg',
-    rating: 9.3,
-  },
-  {
-    id: 2,
-    title: 'hemp nation',
-    //image require(''),
-    location: 'Cape Town',
-    rating: 9.3,
-  },
-  {
-    id: 3,
-    title: 'food delivery',
-    //image require(''),
-    location: 'Cape Town',
-    rating: 9.3,
-  },
-];
-
 export const HOTELS = {
   1: {
     id: 1,
@@ -59,174 +35,114 @@ export const HOTELS = {
     image: require('../../assets/images/hotels/cp-1.jpeg'),
     location: 'South Africa, Vredenburg',
     rating: 9,
-    pricePeerDay: 'R130',
+    pricePeerDay: '130$',
   },
   2: {
     id: 2,
     title: 'Sultan Cave Suites',
     image: require('../../assets/images/hotels/cp-2.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Turkey, Cappadocia',
     rating: 9.3,
-    pricePeerDay: 'R230',
+    pricePeerDay: '230$',
   },
   3: {
     id: 3,
     title: 'Villa Brunella',
     image: require('../../assets/images/hotels/capri-1.jpeg'),
-    location: 'South Africa, Vredenburg',
+    location: 'Italy, Capri',
     rating: 9.4,
-    pricePeerDay: 'R280',
+    pricePeerDay: '280$',
   },
   4: {
     id: 4,
     title: 'Hotel La Floridiana',
     image: require('../../assets/images/hotels/capri-2.jpeg'),
-    location: 'South Africa, Vredenburg',
+    location: 'Italy, Capri',
     rating: 9.3,
-    pricePeerDay: 'R190',
+    pricePeerDay: '190$',
   },
   5: {
     id: 5,
     title: "Le Taha'a by Pearl Resorts",
     image: require('../../assets/images/hotels/polynesia-1.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Polynesia, Bora Bora',
     rating: 9.2,
-    pricePeerDay: 'R250',
+    pricePeerDay: '250$',
   },
   6: {
     id: 6,
     title: 'Le Meridien Bora Bora',
     image: require('../../assets/images/hotels/polynesia-2.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Polynesia, Bora Bora',
     rating: 9.4,
-    pricePeerDay: 'R270',
+    pricePeerDay: '270$',
   },
   7: {
     id: 7,
     title: 'InterContinental Phuket Resort',
     image: require('../../assets/images/hotels/phuket-1.jpg'),
-    location: 'South Africa, Langebaan',
+    location: 'Thailand, Phuket',
     rating: 9.2,
-    pricePeerDay: 'R210',
+    pricePeerDay: '210$',
   },
   8: {
     id: 8,
     title: 'The Nai Harn',
     image: require('../../assets/images/hotels/phuket-2.jpeg'),
-    location: 'South Africa, Langebaan',
+    location: 'Thailand, Phuket',
     rating: 9.4,
-    pricePeerDay: 'R430',
+    pricePeerDay: '430$',
   },
   9: {
     id: 9,
     title: 'Hotel Poseidon',
     image: require('../../assets/images/hotels/ac-1.jpeg'),
-    location: 'South Africa, Langebaan',
+    location: 'Italy, Amalfi Coast',
     rating: 9.2,
-    pricePeerDay: 'R330',
+    pricePeerDay: '330$',
   },
   10: {
     id: 10,
     title: 'Le Agavi Hotel',
     image: require('../../assets/images/hotels/ac-2.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Italy, Amalfi Coast',
     rating: 9.4,
-    pricePeerDay: 'R350',
+    pricePeerDay: '350$',
   },
   11: {
     id: 11,
     title: 'Hotel Casa 1800 Granada',
     image: require('../../assets/images/hotels/granada-1.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Spain, Granada',
     rating: 9.2,
-    pricePeerDay: 'R230',
+    pricePeerDay: '230$',
   },
   12: {
     id: 12,
     title: 'Parador de Granada',
     image: require('../../assets/images/hotels/granada-2.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Spain, Granada',
     rating: 9.4,
-    pricePeerDay: 'R120',
+    pricePeerDay: '120$',
   },
 
   13: {
     id: 13,
     title: 'Konansou',
     image: require('../../assets/images/hotels/cb-1.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Japan, Cherry blossoms',
     rating: 9.2,
-    pricePeerDay: 'R740',
+    pricePeerDay: '740$',
   },
   14: {
     id: 14,
     title: 'Shuhokaku Kogetsu',
     image: require('../../assets/images/hotels/cb-2.jpeg'),
-    location: 'South Africa, Cape Town',
+    location: 'Japan, Cherry blossoms',
     rating: 9.4,
-    pricePeerDay: 'R240',
+    pricePeerDay: '240$',
   },
 };
-
-export const RESTAURANTS = [
-  {
-    1: {
-      id: 1,
-      title: '',
-    },
-
-  },
-];
-
-export const THINGSTODO = [
-  {
-    1: {
-      id: 1,
-      title: 'West Coast Fossil Park',
-      description: 'West Coast Fossil Park West Coast Fossil Park West Coast Fossil Park West Coast Fossil Park',
-      rating: 9.5,
-      image: require('../../assets/images/thingsToDo/vredenburg/caption (1).jpg'),
-      gallery: [
-        require('../../assets/images/thingsToDo/vredenburg/caption.jpg'),
-        require('../../assets/images/thingsToDo/vredenburg/west-coast-fossil-park.jpg'),
-      ],
-      location: 'Vredenburg',
-      address: 'R 45 - Langebaanweg, Vredenburg, Saldanha Bay Municipality 7395 South Africa',
-      price: '100',
-      website: 'https://fossilpark.org.za/',
-      contactNumber: '+27 22 766 1606',
-      category: 'Speciality Museums',
-    },
-
-    2: {
-      id: 2,
-      title: 'Forest Fiends Urban Farm',
-      description: 'We are a small family passionate about the environment and healthy food . Come and see our beautiful ecological garden and learn how a micro ecosystem in any scale is sustainable and will supply you with more nutrient dense food. Whats on the Farm? Coffee shop with a lovely playing area for kids, Aquaponics facility, Aquaponics and Hydroponics items for sale, Arts and crafts, Farm animals.',
-      rating: 9,
-      image: require(''),
-      location: 'Vredenburg',
-      address: '2C Aquarius Street Witteklip, Vredenburg, Saldanha Bay Municipality 7380 South Africa',
-      price: '',
-      website: 'https://forestfriend.co.za/',
-      contactNumber: '+27 72 215 2765',
-      category: 'Farms',
-    },
-
-    3: {
-      id: 3,
-      title: 'Weskus Mall',
-      description: '',
-      rating: 8,
-      image: require(''),
-      location: 'Vredenburg',
-      address: '110 Saldanha Road, Vredenburg, Saldanha Bay Municipality 7380 South Africa',
-      price: '',
-      website: 'http://www.weskus-mall.co.za/',
-      contactNumber: '+27 22 706 6900',
-      category: 'Shopping Malls',
-    },
-  },
-];
 
 export const DESTINATIONS = {
   1: {
@@ -277,7 +193,61 @@ export const DESTINATIONS = {
     rating: 9.4,
     description: '',
   },
-}; 
+};
+
+export const RESTAURANTS = {
+  1: {
+    id: 1,
+    title: '',
+  },
+
+};
+
+export const THINGSTODO = {
+  1: {
+    id: 1,
+    title: 'West Coast Fossil Park',
+    description: 'West Coast Fossil Park West Coast Fossil Park West Coast Fossil Park West Coast Fossil Park',
+    rating: 9.5,
+    image: require('../../assets/images/thingsToDo/vredenburg/caption (1).jpg'),
+    gallery: [
+      require('../../assets/images/thingsToDo/vredenburg/caption.jpg'),
+      require('../../assets/images/thingsToDo/vredenburg/west-coast-fossil-park.jpg'),
+    ],
+    location: 'Vredenburg',
+    address: 'R 45 - Langebaanweg, Vredenburg, Saldanha Bay Municipality 7395 South Africa',
+    price: '100',
+    website: 'https://fossilpark.org.za/',
+    contactNumber: '+27 22 766 1606',
+    category: 'Speciality Museums',
+  },
+  2: {
+    id: 2,
+    title: 'Forest Fiends Urban Farm',
+    description: 'We are a small family passionate about the environment and healthy food . Come and see our beautiful ecological garden and learn how a micro ecosystem in any scale is sustainable and will supply you with more nutrient dense food. Whats on the Farm? Coffee shop with a lovely playing area for kids, Aquaponics facility, Aquaponics and Hydroponics items for sale, Arts and crafts, Farm animals.',
+    rating: 9.0,
+    image: '',
+    location: 'Vredenburg',
+    address: '2C Aquarius Street Witteklip, Vredenburg, Saldanha Bay Municipality 7380 South Africa',
+    price: '',
+    website: 'https://forestfriend.co.za/',
+    contactNumber: '+27 72 215 2765',
+    category: 'Farms',
+  },
+  3: {
+    id: 3,
+    title: 'Weskus Mall',
+    description: '',
+    rating: 8.0,
+    image: '',
+    location: 'Vredenburg',
+    address: '110 Saldanha Road, Vredenburg, Saldanha Bay Municipality 7380 South Africa',
+    price: '',
+    website: 'http://www.weskus-mall.co.za/',
+    contactNumber: '+27 22 706 6900',
+    category: 'Shopping Malls',
+  },
+};
 
 export const TOP_PLACES = [
   {
@@ -319,7 +289,7 @@ export const TOP_PLACES = [
       "Cherry blossoms usually bloom between mid-March and early May. In 2022, Tokyo's cherry blossom season officially began on March 20",
     gallery: [],
     rating: 9.0,
-    thingsToDo: [THINGSTODO[1],THINGSTODO[2],THINGSTODO[3]]
+    // thingsToDo: [THINGSTODO[1],THINGSTODO[2],THINGSTODO[3]]
     },
 ];
 
@@ -369,4 +339,3 @@ export const PLACES = [
     rating: 9.0,
     },
 ];
-
