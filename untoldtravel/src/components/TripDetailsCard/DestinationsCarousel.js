@@ -9,17 +9,20 @@ import CardContent from '../shared/Card/CardContent';
 import Icon from '../Icon';
 import Rating from '../shared/Rating/Rating';
 import CardFavoriteIcon from '../shared/Card/CardFavoriteIcon';
+import { useNavigation } from '@react-navigation/native';
 
 const CARD_HEIGHT = 200;
 
 // create a component
 const DestinationCarousel = ({destination}) => {
+    const navigation = useNavigation();
+
     return (
         <Carousel 
             items={destination} 
             renderItem={({item, style}) => {
                 return (
-                    <Card style={[styles.card, style]}>
+                    <Card style={[styles.card, style]} onPress={() => navigation.navigate('DetailsScreen')}>
                         <CardFavoriteIcon active={false} onPress={() => {}} />
                         <CardMedia source={item.image} />
                         <CardContent style={styles.content}>

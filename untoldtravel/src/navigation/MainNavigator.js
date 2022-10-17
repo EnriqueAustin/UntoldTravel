@@ -11,6 +11,7 @@ import TabNavigator from './TabNavigator';
 import TripDetailsScreen from '../screens/TripDetailsScreen';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import TravelingScreen from '../screens/TravelingScreen';
+import DetailsScreen from '../screens/DetailsScreen';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -46,6 +47,16 @@ const MainNavigator = () => {
                 <Stack.Screen 
                     name="TravelingScreen" 
                     component={TravelingScreen} 
+                    options={{
+                        headerShown: false,
+                        usenativeDriver: true,
+                        gestureEnabled: false,
+                    }}     
+                />
+
+                <Stack.Screen 
+                    name="DetailsScreen" 
+                    component={DetailsScreen} 
                     options={{
                         headerShown: false,
                         usenativeDriver: true,
