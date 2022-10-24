@@ -25,6 +25,7 @@ const TripDetailsScreen = ({navigation, route}) => {
                     icon="ArrowLeft"
                     style={styles.backIcon}
                     onPress={navigation.goBack}
+                    size={40}
                 />
             </Animatable.View>
             <TripDetailsCarousel slides={slides} id={trip.id} />
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     },
     backIcon: {
         tintColor: colors.white,
+        marginTop: 40,
     },
 });
 

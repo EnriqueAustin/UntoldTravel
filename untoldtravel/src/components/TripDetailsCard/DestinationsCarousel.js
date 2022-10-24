@@ -22,7 +22,7 @@ const DestinationCarousel = ({destination}) => {
             items={destination} 
             renderItem={({item, style}) => {
                 return (
-                    <Card style={[styles.card, style]} onPress={() => navigation.navigate('DetailsScreen')}>
+                    <Card style={[styles.card, style]} >
                         <CardFavoriteIcon active={false} onPress={() => {}} />
                         <CardMedia source={item.image} />
                         <CardContent style={styles.content}>

@@ -1,194 +1,227 @@
 //import liraries
-import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, Dimensions,TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+  TouchableOpacity,
+  StatusBar,
+} from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { ScrollView } from "react-native-gesture-handler";
+import Icon from '../components/Icon';
+import { colors, sizes, spacing } from '../constants/theme';
 
-import Entypo from 'react-native-vector-icons/Entypo';
+import Entypo from "react-native-vector-icons/Entypo";
 
-const height = Dimensions.get('window').height;
+import Rating from "../components/shared/Rating/Rating";
+import CardFavoriteIcon from "../components/shared/Card/CardFavoriteIcon";
+import Divider from "../components/shared/Divider";
+
+const height = Dimensions.get("window").height;
 
 // create a component
-const DetailsScreen = () => {
-    const navigation = useNavigation();
+const DetailsScreen = ({ active }) => {
+  const navigation = useNavigation();
+  const route = useRoute();
+  const { item } = route.params;
 
-    return (
-        <View style={styles.container}>
-        <ImageBackground
-            source={require('../../assets/images/eea622430834cb64b900c2f03e5be6b8.jpeg')}
-            style={styles.backgroundImage}
+  return (
+    <ScrollView
+        showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ backgroundColor: "white", paddingBottom: 20 }}
+    >
+        <StatusBar 
+            barStyle='light-content'
+            translucent
+            backgroundColor='rgba(0,0,0,0)'
+        />
+        <ImageBackground 
+            style={styles.headerImage} 
+            source={item.image}
         >
-            <TouchableOpacity 
-                style={styles.backIcon} 
-                onPress={() => navigation.goBack()}>
-                <Entypo 
-                    name='chevron-left' 
-                    size={32} 
-                    color='white'/>
-            </TouchableOpacity>
-            <View style={styles.titleWrapper} >
-                <Text style={styles.itemTitle}>Wheeee</Text>
-                <View style={styles.locationwrapper}>
-                    <Entypo name='location-pin' size={24} color='white' />
-                    <Text style={styles.locationText}>Cape Town</Text>
-                </View>
+
+        <View style={styles.header}>
+            <View style={styles.iconBack}>
+                <Icon
+                    icon="ArrowLeft"
+                    style={styles.backIcon}
+                    onPress={navigation.goBack}
+                    size={40}
+                />  
             </View>
-        </ImageBackground>
-
-        <View style={styles.descriptionWrapper}>
-            <View style={styles.heartWrapper}>
-                <Entypo name='heart' size={32} color='green' />
-            </View>
-            <View style={styles.descriptionTextWrapper}>
-                <Text style={styles.descriptionTitle}>Description</Text>
-                <Text style={styles.descriptionText}>YOOOOOOOOOOO</Text>
-            </View>
-
-            <View style={styles.infoWrapper}>
-                <View style={styles.infoItem}>
-                    <Text style={styles.infoTitle}>PRICE</Text>
-                    <View style={styles.infoTextWrapper}>
-                        <Text style={styles.infoText}>R 500</Text>
-                        <Text style={styles.infoSubText}>/person</Text>
-                    </View>
-                </View>
-
-                <View style={styles.infoItem}>
-                    <Text style={styles.infoTitle}>RATING</Text>
-                    <View style={styles.infoTextWrapper}>
-                        <Text style={styles.infoText}>5</Text>
-                        <Text style={styles.infoSubText}>/5</Text>
-                    </View>
-                </View>
-
-                <View style={styles.infoItem}>
-                    <Text style={styles.infoTitle}>DURATION</Text>
-                    <View style={styles.infoTextWrapper}>
-                        <Text style={styles.infoText}>1h</Text>
-                        <Text style={styles.infoSubText}></Text>
-                    </View>
-                </View>
-            </View>
-
-            <TouchableOpacity style={styles.buttonWrapper} onPress={() => alert('You Booked A Trip')}>
-                <Text style={styles.buttonText}>Book Now</Text>
-            </TouchableOpacity>
+            <CardFavoriteIcon size={100} active={false} onPress={() => {}} />
         </View>
-    </View>
-    );
+        </ImageBackground>
+        <View>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Icon icon="Location" size={48} />
+          </TouchableOpacity>
+          <View style={{marginTop: 20, paddingHorizontal: 20,}}>
+            <Text 
+              style={{
+                fontSize:20, 
+                fontWeight: 'bold'
+              }}>
+                {item.title}
+            </Text>
+            <Text 
+              style={{
+                fontSize:12, 
+                fontWeight: '400',
+                color: colors.lightGray,
+              }}>
+                {item.location}
+            </Text>
+
+            <View
+              style={{
+                marginTop: 10,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}
+            >
+              <Rating
+                showLabelInLine
+                rating={item.rating} 
+                size={12} 
+                containerStyle={styles.rating} 
+              />
+              <Text style={styles.reviesCount}>12 revievs</Text>
+            </View>
+            
+            <Divider style={{marginTop: 20,}} enabledSpacing={false} />
+
+            <View style={{marginTop: 20}}>
+              <Text>{item.description}</Text>
+            </View>
+          </View>
+          <View 
+            style={{
+              marginTop: 20,
+              flexDirection: "row",
+              justifyContent: 'space-between',
+              paddingLeft: 20,
+              alignItems: 'center',
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: 'bold',
+              }}
+            >
+              Price per night
+            </Text>
+            <View
+              style={styles.priceTag}
+            >
+              <Text
+                style={{
+                  fontSize: 16,
+                  fontWeight: "bold",
+                  color: colors.white,
+                  marginLeft: 5,
+                }}
+              >
+                R {item.pricePeerDay}
+              </Text>
+
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: "bold",
+                  color: colors.gray,
+                  marginLeft: 5,
+                }}
+              >
+                + breakfast
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.btn}>
+                <Text
+                  style={{
+                    color: colors.white,
+                    fontSize: 18,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Book Now
+                </Text>
+          </View>
+        </View>
+    </ScrollView>
+  );
 };
 
 // define your styles
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'white',
-    },
-    backgroundImage: {
-        height: height * 0.6,
-        justifyContent: 'space-between',
-    },
-    descriptionWrapper: {
-        flex: 1,
-        backgroundColor: 'white',
-        marginTop: -20,
-        borderRadius: 25,
-    },
-    backIcon: {
-        marginLeft: 20,
-        marginTop: 60,
-    },
-    titleWrapper: {
-        marginHorizontal: 20,
-        marginBottom: 40,
-    },
-    itemTitle: {
-        fontSize: 32,
-        color: 'white',
-    },
-    locationwrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginTop: 5,
-    },
-    locationText: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: 'white',
-    },
-    heartWrapper: {
-        position: 'absolute',
-        right: 40,
-        top: -30,
-        width: 64,
-        height: 64,
-        backgroundColor: 'white',
-        borderRadius: 64,
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-    },
-    descriptionTextWrapper: {
-        marginTop: 30,
-        marginHorizontal:20,
-    },
-    descriptionTitle: {
-        fontWeight: 'bold',
-        fontSize: 24,
-        color: 'black',
-    },
-    descriptionText: {
-        marginTop: 20,
-        fontSize: 16,
-        color: 'gray',
-        height: 85,
-    },
-    infoWrapper: {
-        flexDirection: 'row',
-        marginHorizontal: 20,
-        marginTop: 20,
-        justifyContent: 'space-between',
-    },
-    infoItem: {},
-    infoTitle: {
-        fontWeight: 'bold',
-        fontSize: 12,
-        color: 'gray',
-    },
-    infoTextWrapper: {
-        flexDirection: 'row',
-        alignItems: 'flex-end',
-        marginTop: 5,
-    },
-    infoText: {
-        fontWeight: 'bold',
-        fontSize: 24,
-        color: 'green',
-    },
-    infoSubText: {
-        fontWeight: 'bold',
-        fontSize: 14,
-        color: 'gray',
-    },
-    buttonWrapper: {
-        marginHorizontal: 20,
-        marginTop: 40,
-        backgroundColor: 'green',
-        alignItems: 'center',
-        paddingVertical: 15,
-        borderRadius: 20,
-    },
-    buttonText: {
-        fontWeight: 'bold',
-        fontSize: 18,
-        color: 'white',
-    },
+  iconContainer: {
+    position: 'absolute',
+    height: 60,
+    width: 60,
+    backgroundColor: colors.green,
+    top: -30,
+    right: 20,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  headerImage: {
+    height: 400,
+    borderBottomRightRadius: 16,
+    borderBottomLeftRadius: 16,
+    overflow: 'hidden',
+  },
+  header: {
+    marginTop: 60,
+    flexDirection: 'row',
+    alignItems: "center",
+    marginHorizontal: 20,
+    justifyContent: "space-between",
+    
+  },
+  iconBack: {
+    borderRadius: sizes.radius,
+    backgroundColor: '#f4f4f4',
+    padding: 0,
+  },
+  backIcon: {
+    // tintColor: colors.white,
+  },
+  favoritIcon: {
+    color: colors.white,
+  },
+  rating: {
+    // marginTop: spacing.m / 2,
+  },
+  reviesCount: {
+    fontSize: 13,
+    color: colors.lightGray,
+  },
+  priceTag: {
+    height: 40,
+    alignItems: "center",
+    marginLeft: 40,
+    paddingLeft:20,
+    flex: 1,
+    backgroundColor: colors.lightGray,
+    borderTopLeftRadius: sizes.radius,
+    borderBottomLeftRadius: sizes.radius,
+    flexDirection: "row",
+  },
+  btn: {
+    height: 55,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 40,
+    backgroundColor: colors.green,
+    borderRadius: sizes.radius,
+  },
 });
 
 //make this component available to the app
