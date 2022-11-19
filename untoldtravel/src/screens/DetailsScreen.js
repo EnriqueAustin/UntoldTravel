@@ -29,9 +29,14 @@ const DetailsScreen = ({ active }) => {
   const { item } = route.params;
 
   return (
+    <>
     <ScrollView
         showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ backgroundColor: "white", paddingBottom: 20 }}
+        contentContainerStyle={{ 
+          backgroundColor: "white", 
+          paddingBottom: 20,
+          flex: 1,
+        }}
     >
         <StatusBar 
             barStyle='light-content'
@@ -142,7 +147,10 @@ const DetailsScreen = ({ active }) => {
             </View>
           </View>
 
-          <View style={styles.btn}>
+          
+        </View>
+    </ScrollView>
+    <TouchableOpacity style={styles.btn}>
                 <Text
                   style={{
                     color: colors.white,
@@ -152,9 +160,8 @@ const DetailsScreen = ({ active }) => {
                 >
                   Book Now
                 </Text>
-          </View>
-        </View>
-    </ScrollView>
+          </TouchableOpacity>
+    </>
   );
 };
 
