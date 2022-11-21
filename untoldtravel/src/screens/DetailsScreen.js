@@ -227,7 +227,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 40,
     backgroundColor: colors.green,
-    borderRadius: sizes.radius,
+    borderTopLeftRadius: sizes.radius,
+    borderTopRightRadius: sizes.radius,
   },
 });
 
