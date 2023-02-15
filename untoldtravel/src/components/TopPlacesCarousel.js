@@ -15,6 +15,7 @@ const TopPlacesCarousel = ({list}) => {
     const navigation = useNavigation();
     return (
         <FlatList 
+            style={shadow.light}
             data={list}
             horizontal
             snapToInterval={CARD_WIDTH_SPACING}
@@ -32,7 +33,7 @@ const TopPlacesCarousel = ({list}) => {
                             marginRight: index === list.length - 1 ? spacing.l : 0,
                         }}
                     >
-                        <View style={[styles.card]}>
+                        <View style={[styles.card, shadow.light]}>
                             <FavoriteButton style={styles.favorite} />
                             <SharedElement 
                               id={`trip.${item.id}.image`} 
